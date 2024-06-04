@@ -74,4 +74,25 @@ public class LoginDAO {
        }
        return Lista;
    }
+    
+    public boolean EliminarUsuarios(int id){
+       String sql = "DELETE FROM usuarios WHERE id = ?";
+       try {
+           ps = con.prepareStatement(sql);
+           ps.setInt(1, id);
+           ps.execute();
+           return true;
+       } catch (SQLException e) {
+           System.out.println(e.toString());
+           return false;
+       }finally{
+           try {
+               con.close();
+           } catch (SQLException ex) {
+               System.out.println(ex.toString());
+           }
+       }
+   }
+    
+    
 }

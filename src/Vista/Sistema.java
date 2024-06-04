@@ -49,6 +49,7 @@ public final class Sistema extends javax.swing.JFrame {
     LoginDAO login = new LoginDAO();
     DefaultTableModel modelo = new DefaultTableModel();
     DefaultTableModel tmp = new DefaultTableModel();
+   
     int item;
     double Totalpagar = 0.00;
 
@@ -69,8 +70,8 @@ public final class Sistema extends javax.swing.JFrame {
         txtIdCV.setVisible(false);
         ListarConfig();
         if (priv.getRol().equals("Asistente")) {
-            btnProductos.setEnabled(false);
-            btnProveedor.setEnabled(false);
+            //btnProductos.setEnabled(false);
+            //btnProveedor.setEnabled(false);
             btnConfig.setEnabled(false);
             btnUsuarios.setEnabled(false);
             LabelVendedor.setText(priv.getNombre());
@@ -187,7 +188,6 @@ public final class Sistema extends javax.swing.JFrame {
         header.setBackground(new Color(0, 110, 255));
         header.setForeground(Color.white);
     }
-
     public void LimpiarTable() {
         for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
@@ -328,6 +328,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnPdfVentas = new javax.swing.JButton();
         txtIdVenta = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        BtnBoVenta = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -366,6 +367,9 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
+        BtnEliUsuario = new javax.swing.JButton();
+        txtIdUsuarios = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         TableUsuarios = new javax.swing.JTable();
 
@@ -375,9 +379,11 @@ public final class Sistema extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 192, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logo.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 6, 102, 109));
 
         btnNuevaVenta.setBackground(new java.awt.Color(0, 0, 0));
         btnNuevaVenta.setForeground(new java.awt.Color(255, 255, 255));
@@ -390,6 +396,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnNuevaVentaActionPerformed(evt);
             }
         });
+        jPanel1.add(btnNuevaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 200, 45));
 
         btnClientes.setBackground(new java.awt.Color(0, 0, 0));
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
@@ -402,6 +409,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnClientesActionPerformed(evt);
             }
         });
+        jPanel1.add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 200, 45));
 
         btnProveedor.setBackground(new java.awt.Color(0, 0, 0));
         btnProveedor.setForeground(new java.awt.Color(255, 255, 255));
@@ -414,6 +422,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnProveedorActionPerformed(evt);
             }
         });
+        jPanel1.add(btnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 200, 45));
 
         btnProductos.setBackground(new java.awt.Color(0, 0, 0));
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
@@ -431,6 +440,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnProductosActionPerformed(evt);
             }
         });
+        jPanel1.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 200, 45));
 
         btnVentas.setBackground(new java.awt.Color(0, 0, 0));
         btnVentas.setForeground(new java.awt.Color(255, 255, 255));
@@ -443,6 +453,7 @@ public final class Sistema extends javax.swing.JFrame {
                 btnVentasActionPerformed(evt);
             }
         });
+        jPanel1.add(btnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 200, 45));
 
         btnConfig.setBackground(new java.awt.Color(0, 0, 0));
         btnConfig.setForeground(new java.awt.Color(255, 255, 255));
@@ -455,11 +466,14 @@ public final class Sistema extends javax.swing.JFrame {
                 btnConfigActionPerformed(evt);
             }
         });
+        jPanel1.add(btnConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 200, 45));
 
         LabelVendedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelVendedor.setText("Administrador");
+        jPanel1.add(LabelVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 194, -1));
 
         tipo.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 175, -1, -1));
 
         btnUsuarios.setBackground(new java.awt.Color(0, 0, 0));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
@@ -472,59 +486,17 @@ public final class Sistema extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnNuevaVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(LabelVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(tipo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(LabelVendedor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tipo)
-                .addGap(8, 8, 8)
-                .addComponent(btnNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
-        );
+        jPanel1.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 200, 45));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 560));
 
         jLabel38.setFont(new java.awt.Font("Yu Gothic Light", 3, 36)); // NOI18N
         jLabel38.setText("Sistema de Venta Planet Shoes");
-        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 530, -1));
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 530, 60));
 
         jLabel2.setBackground(new java.awt.Color(255, 204, 51));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/amarillo (2).jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 870, 150));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, -10, 870, 170));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -554,6 +526,11 @@ public final class Sistema extends javax.swing.JFrame {
 
         txtCodigoVenta.setBackground(new java.awt.Color(255, 192, 0));
         txtCodigoVenta.setBorder(null);
+        txtCodigoVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoVentaActionPerformed(evt);
+            }
+        });
         txtCodigoVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCodigoVentaKeyPressed(evt);
@@ -581,6 +558,9 @@ public final class Sistema extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCantidadVentaKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCantidadVentaKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCantidadVentaKeyTyped(evt);
             }
@@ -604,1121 +584,1274 @@ public final class Sistema extends javax.swing.JFrame {
             new String [] {
                 "ID", "DESCRIPCIÓN", "CANTIDAD", "PRECIO U.", "PRECIO TOTAL"
             }
-        ));
-        jScrollPane1.setViewportView(TableVenta);
-        if (TableVenta.getColumnModel().getColumnCount() > 0) {
-            TableVenta.getColumnModel().getColumn(0).setPreferredWidth(60);
-            TableVenta.getColumnModel().getColumn(1).setPreferredWidth(100);
-            TableVenta.getColumnModel().getColumn(2).setPreferredWidth(40);
-            TableVenta.getColumnModel().getColumn(3).setPreferredWidth(50);
-            TableVenta.getColumnModel().getColumn(4).setPreferredWidth(60);
+        )
+        {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
         }
+    );
+    jScrollPane1.setViewportView(TableVenta);
+    if (TableVenta.getColumnModel().getColumnCount() > 0) {
+        TableVenta.getColumnModel().getColumn(0).setPreferredWidth(60);
+        TableVenta.getColumnModel().getColumn(1).setPreferredWidth(100);
+        TableVenta.getColumnModel().getColumn(2).setPreferredWidth(40);
+        TableVenta.getColumnModel().getColumn(3).setPreferredWidth(50);
+        TableVenta.getColumnModel().getColumn(4).setPreferredWidth(60);
+    }
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 843, 191));
+    jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 843, 191));
 
-        btnEliminarventa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
-        btnEliminarventa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarventaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnEliminarventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, -1, 40));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel8.setText("Dni/Ruc");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 352, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel9.setText("Nombre:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 352, -1, -1));
-
-        txtRucVenta.setBackground(new java.awt.Color(255, 192, 0));
-        txtRucVenta.setBorder(null);
-        txtRucVenta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtRucVentaKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtRucVentaKeyTyped(evt);
-            }
-        });
-        jPanel2.add(txtRucVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 375, 116, 30));
-
-        txtNombreClienteventa.setEditable(false);
-        txtNombreClienteventa.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreClienteventa.setBorder(null);
-        jPanel2.add(txtNombreClienteventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 375, 169, 30));
-
-        btnGenerarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/print.png"))); // NOI18N
-        btnGenerarVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarVentaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 373, -1, 45));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/money.png"))); // NOI18N
-        jLabel10.setText("Total a Pagar:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 377, -1, -1));
-
-        LabelTotal.setText("-----");
-        jPanel2.add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 381, -1, -1));
-        jPanel2.add(txtIdCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 375, -1, -1));
-        jPanel2.add(txtIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
-
-        Midate.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(Midate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 210, 30));
-
-        jLabel11.setText("Seleccionar:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, -1, -1));
-
-        jPanel14.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 2));
-
-        jPanel19.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 2));
-
-        jPanel20.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
-        );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 190, 2));
-
-        jPanel21.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 40, 2));
-
-        jPanel22.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 80, 2));
-
-        jPanel23.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 85, Short.MAX_VALUE)
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 85, 2));
-
-        jPanel24.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 405, 120, 2));
-
-        jPanel25.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 405, 160, 2));
-
-        jTabbedPane1.addTab("1", jPanel2);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TableCliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "DNI/RUC", "NOMBRE", "TELÉFONO", "DIRECCIÓN"
-            }
-        ));
-        TableCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableClienteMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(TableCliente);
-        if (TableCliente.getColumnModel().getColumnCount() > 0) {
-            TableCliente.getColumnModel().getColumn(0).setPreferredWidth(10);
-            TableCliente.getColumnModel().getColumn(1).setPreferredWidth(50);
-            TableCliente.getColumnModel().getColumn(2).setPreferredWidth(100);
-            TableCliente.getColumnModel().getColumn(3).setPreferredWidth(50);
-            TableCliente.getColumnModel().getColumn(4).setPreferredWidth(80);
+    btnEliminarventa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+    btnEliminarventa.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEliminarventaActionPerformed(evt);
         }
+    });
+    jPanel2.add(btnEliminarventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, -1, 40));
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 555, 370));
+    jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+    jLabel8.setText("Dni/Ruc");
+    jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 352, -1, -1));
 
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+    jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+    jLabel9.setText("Nombre:");
+    jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 352, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel12.setText("Dni/Ruc:");
-        jPanel9.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        txtDniCliente.setBackground(new java.awt.Color(204, 204, 204));
-        txtDniCliente.setBorder(null);
-        txtDniCliente.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtDniClienteKeyTyped(evt);
-            }
-        });
-        jPanel9.add(txtDniCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 160, 30));
-
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel13.setText("Nombre:");
-        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
-
-        txtNombreCliente.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreCliente.setBorder(null);
-        jPanel9.add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 160, 30));
-
-        txtTelefonoCliente.setBackground(new java.awt.Color(204, 204, 204));
-        txtTelefonoCliente.setBorder(null);
-        jPanel9.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 160, 30));
-
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel14.setText("Télefono:");
-        jPanel9.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel15.setText("Dirección:");
-        jPanel9.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
-
-        txtDirecionCliente.setBackground(new java.awt.Color(204, 204, 204));
-        txtDirecionCliente.setBorder(null);
-        jPanel9.add(txtDirecionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 203, 160, 30));
-        jPanel9.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 30, -1));
-
-        btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
-        btnGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarClienteActionPerformed(evt);
-            }
-        });
-        jPanel9.add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 266, 70, 35));
-
-        btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
-        btnEditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarClienteActionPerformed(evt);
-            }
-        });
-        jPanel9.add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 266, 70, 35));
-
-        btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
-        btnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarClienteActionPerformed(evt);
-            }
-        });
-        jPanel9.add(btnEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 317, 70, 35));
-
-        btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
-        btnNuevoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoClienteActionPerformed(evt);
-            }
-        });
-        jPanel9.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 317, 70, 35));
-
-        jPanel26.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel9.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 160, 2));
-
-        jPanel27.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
-        jPanel27.setLayout(jPanel27Layout);
-        jPanel27Layout.setHorizontalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel27Layout.setVerticalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel9.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 160, 2));
-
-        jPanel28.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
-        jPanel28.setLayout(jPanel28Layout);
-        jPanel28Layout.setHorizontalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel28Layout.setVerticalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel9.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 160, 2));
-
-        jPanel29.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
-        jPanel29.setLayout(jPanel29Layout);
-        jPanel29Layout.setHorizontalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel29Layout.setVerticalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel9.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 233, 160, 2));
-
-        jPanel46.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel41.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel41.setText("Nuevo Cliente");
-
-        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
-        jPanel46.setLayout(jPanel46Layout);
-        jPanel46Layout.setHorizontalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-        );
-        jPanel46Layout.setVerticalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel46Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel41)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel9.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
-
-        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 270, 370));
-
-        jTabbedPane1.addTab("2", jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TableProveedor.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "RUC", "NOMBRE", "TELÉFONO", "DIRECCIÓN"
-            }
-        ));
-        TableProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableProveedorMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(TableProveedor);
-        if (TableProveedor.getColumnModel().getColumnCount() > 0) {
-            TableProveedor.getColumnModel().getColumn(0).setPreferredWidth(20);
-            TableProveedor.getColumnModel().getColumn(1).setPreferredWidth(40);
-            TableProveedor.getColumnModel().getColumn(2).setPreferredWidth(100);
-            TableProveedor.getColumnModel().getColumn(3).setPreferredWidth(50);
-            TableProveedor.getColumnModel().getColumn(4).setPreferredWidth(80);
+    txtRucVenta.setBackground(new java.awt.Color(255, 192, 0));
+    txtRucVenta.setBorder(null);
+    txtRucVenta.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtRucVentaKeyPressed(evt);
         }
-
-        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 57, 558, 370));
-
-        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel17.setText("Ruc:");
-        jPanel10.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-
-        txtRucProveedor.setBackground(new java.awt.Color(204, 204, 204));
-        txtRucProveedor.setBorder(null);
-        jPanel10.add(txtRucProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 138, 30));
-
-        jLabel18.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel18.setText("Nombre:");
-        jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
-
-        txtNombreproveedor.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreproveedor.setBorder(null);
-        jPanel10.add(txtNombreproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 138, 30));
-
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel19.setText("Teléfono:");
-        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-
-        txtTelefonoProveedor.setBackground(new java.awt.Color(204, 204, 204));
-        txtTelefonoProveedor.setBorder(null);
-        jPanel10.add(txtTelefonoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 138, 30));
-
-        jLabel20.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel20.setText("Dirección:");
-        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-
-        txtDireccionProveedor.setBackground(new java.awt.Color(204, 204, 204));
-        txtDireccionProveedor.setBorder(null);
-        jPanel10.add(txtDireccionProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 138, 30));
-
-        btnguardarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
-        btnguardarProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnguardarProveedorActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnguardarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 266, 70, 35));
-
-        btnEditarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
-        btnEditarProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarProveedorActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnEditarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 266, 70, 35));
-
-        btnNuevoProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
-        btnNuevoProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoProveedorActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnNuevoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 318, 70, 35));
-
-        btnEliminarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
-        btnEliminarProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarProveedorActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnEliminarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 318, 70, 35));
-        jPanel10.add(txtIdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 24, -1));
-
-        jPanel34.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 138, Short.MAX_VALUE)
-        );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel10.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 138, 2));
-
-        jPanel35.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
-        jPanel35.setLayout(jPanel35Layout);
-        jPanel35Layout.setHorizontalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 138, Short.MAX_VALUE)
-        );
-        jPanel35Layout.setVerticalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel10.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 138, 2));
-
-        jPanel36.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
-        jPanel36.setLayout(jPanel36Layout);
-        jPanel36Layout.setHorizontalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 138, Short.MAX_VALUE)
-        );
-        jPanel36Layout.setVerticalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel10.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 138, 2));
-
-        jPanel37.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
-        jPanel37.setLayout(jPanel37Layout);
-        jPanel37Layout.setHorizontalGroup(
-            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 138, Short.MAX_VALUE)
-        );
-        jPanel37Layout.setVerticalGroup(
-            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel10.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 138, 2));
-
-        jPanel38.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel33.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("Nuevo Proveedor");
-
-        javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
-        jPanel38.setLayout(jPanel38Layout);
-        jPanel38Layout.setHorizontalGroup(
-            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-        );
-        jPanel38Layout.setVerticalGroup(
-            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel38Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel33)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel10.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 50));
-
-        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 260, 380));
-
-        jTabbedPane1.addTab("3", jPanel4);
-
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TableProducto.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "CODIGO", "DESCRIPCIÓN", "PROVEEDOR", "STOCK", "PRECIO"
-            }
-        ));
-        TableProducto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableProductoMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(TableProducto);
-        if (TableProducto.getColumnModel().getColumnCount() > 0) {
-            TableProducto.getColumnModel().getColumn(0).setPreferredWidth(20);
-            TableProducto.getColumnModel().getColumn(1).setPreferredWidth(50);
-            TableProducto.getColumnModel().getColumn(2).setPreferredWidth(100);
-            TableProducto.getColumnModel().getColumn(3).setPreferredWidth(60);
-            TableProducto.getColumnModel().getColumn(4).setPreferredWidth(40);
-            TableProducto.getColumnModel().getColumn(5).setPreferredWidth(50);
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtRucVentaKeyTyped(evt);
         }
+    });
+    jPanel2.add(txtRucVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 375, 116, 30));
 
-        jPanel5.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 590, 380));
-        jPanel5.add(txtIdproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 25, 20, -1));
+    txtNombreClienteventa.setEditable(false);
+    txtNombreClienteventa.setBackground(new java.awt.Color(204, 204, 204));
+    txtNombreClienteventa.setBorder(null);
+    jPanel2.add(txtNombreClienteventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 375, 169, 30));
 
-        jPanel11.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel22.setText("Código:");
-        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
-
-        txtCodigoPro.setBackground(new java.awt.Color(204, 204, 204));
-        txtCodigoPro.setBorder(null);
-        jPanel11.add(txtCodigoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 130, 30));
-
-        jLabel23.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel23.setText("Descripción:");
-        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
-
-        txtDesPro.setBackground(new java.awt.Color(204, 204, 204));
-        txtDesPro.setBorder(null);
-        jPanel11.add(txtDesPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 130, 30));
-
-        jLabel24.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel24.setText("Cantidad:");
-        jPanel11.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-
-        txtCantPro.setBackground(new java.awt.Color(204, 204, 204));
-        txtCantPro.setBorder(null);
-        jPanel11.add(txtCantPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 130, 30));
-
-        jLabel25.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel25.setText("Precio:");
-        jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-
-        txtPrecioPro.setBackground(new java.awt.Color(204, 204, 204));
-        txtPrecioPro.setBorder(null);
-        txtPrecioPro.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPrecioProKeyTyped(evt);
-            }
-        });
-        jPanel11.add(txtPrecioPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, 30));
-
-        jLabel26.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel26.setText("Proveedor:");
-        jPanel11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
-
-        cbxProveedorPro.setBackground(new java.awt.Color(204, 204, 204));
-        cbxProveedorPro.setBorder(null);
-        cbxProveedorPro.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbxProveedorProItemStateChanged(evt);
-            }
-        });
-        cbxProveedorPro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxProveedorProActionPerformed(evt);
-            }
-        });
-        jPanel11.add(cbxProveedorPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 130, 30));
-
-        btnGuardarpro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
-        btnGuardarpro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarproActionPerformed(evt);
-            }
-        });
-        jPanel11.add(btnGuardarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 35));
-
-        btnEditarpro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
-        btnEditarpro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarproActionPerformed(evt);
-            }
-        });
-        jPanel11.add(btnEditarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, 35));
-
-        btnEliminarPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
-        btnEliminarPro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarProActionPerformed(evt);
-            }
-        });
-        jPanel11.add(btnEliminarPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 35));
-
-        btnNuevoPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
-        btnNuevoPro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoProActionPerformed(evt);
-            }
-        });
-        jPanel11.add(btnNuevoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, 35));
-
-        jPanel30.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel11.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 130, 2));
-
-        jPanel31.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
-        jPanel31.setLayout(jPanel31Layout);
-        jPanel31Layout.setHorizontalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel31Layout.setVerticalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel11.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 130, 2));
-
-        jPanel32.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
-        jPanel32.setLayout(jPanel32Layout);
-        jPanel32Layout.setHorizontalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel32Layout.setVerticalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel11.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 130, 2));
-
-        jPanel33.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
-        jPanel33.setLayout(jPanel33Layout);
-        jPanel33Layout.setHorizontalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel33Layout.setVerticalGroup(
-            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel11.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, 2));
-
-        jPanel39.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel40.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel40.setText("Nuevo Producto");
-
-        javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
-        jPanel39.setLayout(jPanel39Layout);
-        jPanel39Layout.setHorizontalGroup(
-            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-        );
-        jPanel39Layout.setVerticalGroup(
-            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel39Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel11.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 50));
-
-        jPanel5.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 250, 380));
-
-        jTabbedPane1.addTab("4", jPanel5);
-
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TableVentas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "CLIENTE", "VENDEDOR", "TOTAL"
-            }
-        ));
-        TableVentas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableVentasMouseClicked(evt);
-            }
-        });
-        jScrollPane5.setViewportView(TableVentas);
-        if (TableVentas.getColumnModel().getColumnCount() > 0) {
-            TableVentas.getColumnModel().getColumn(0).setPreferredWidth(20);
-            TableVentas.getColumnModel().getColumn(1).setPreferredWidth(60);
-            TableVentas.getColumnModel().getColumn(2).setPreferredWidth(60);
-            TableVentas.getColumnModel().getColumn(3).setPreferredWidth(60);
+    btnGenerarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/print.png"))); // NOI18N
+    btnGenerarVenta.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnGenerarVentaActionPerformed(evt);
         }
-
-        jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 766, 310));
-
-        btnPdfVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/pdf.png"))); // NOI18N
-        btnPdfVentas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPdfVentasActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnPdfVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
-        jPanel6.add(txtIdVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 46, -1));
-
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Historial Ventas");
-        jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 280, -1));
-
-        jTabbedPane1.addTab("5", jPanel6);
-
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel32.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel32.setText("DATOS DE LA EMPRESA");
-        jPanel7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
-
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel8.add(txtIdConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 24, -1));
-
-        jLabel30.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel30.setText("Dirección");
-        jPanel8.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-
-        jLabel29.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel29.setText("Teléfono");
-        jPanel8.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
-
-        txtTelefonoConfig.setBackground(new java.awt.Color(204, 204, 204));
-        txtTelefonoConfig.setBorder(null);
-        jPanel8.add(txtTelefonoConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 218, 30));
-
-        txtDireccionConfig.setBackground(new java.awt.Color(204, 204, 204));
-        txtDireccionConfig.setBorder(null);
-        jPanel8.add(txtDireccionConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 147, 30));
-
-        jLabel31.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel31.setText("Mensaje");
-        jPanel8.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
-
-        txtMensaje.setBackground(new java.awt.Color(204, 204, 204));
-        txtMensaje.setBorder(null);
-        jPanel8.add(txtMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 400, 30));
-
-        btnActualizarConfig.setBackground(new java.awt.Color(0, 110, 255));
-        btnActualizarConfig.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        btnActualizarConfig.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizarConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
-        btnActualizarConfig.setText("ACTUALIZAR");
-        btnActualizarConfig.setBorder(null);
-        btnActualizarConfig.setFocusable(false);
-        btnActualizarConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarConfigActionPerformed(evt);
-            }
-        });
-        jPanel8.add(btnActualizarConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 180, 35));
-
-        jLabel27.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel27.setText("Ruc");
-        jPanel8.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
-
-        txtRucConfig.setBackground(new java.awt.Color(204, 204, 204));
-        txtRucConfig.setBorder(null);
-        jPanel8.add(txtRucConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 147, 30));
-
-        jLabel28.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel28.setText("Nombre");
-        jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
-
-        txtNombreConfig.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreConfig.setBorder(null);
-        jPanel8.add(txtNombreConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 220, 30));
-
-        jPanel41.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
-        jPanel41.setLayout(jPanel41Layout);
-        jPanel41Layout.setHorizontalGroup(
-            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-        jPanel41Layout.setVerticalGroup(
-            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel8.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 147, 2));
-
-        jPanel42.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
-        jPanel42.setLayout(jPanel42Layout);
-        jPanel42Layout.setHorizontalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-        jPanel42Layout.setVerticalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel8.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 147, 2));
-
-        jPanel43.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
-        jPanel43.setLayout(jPanel43Layout);
-        jPanel43Layout.setHorizontalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel43Layout.setVerticalGroup(
-            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel8.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 400, 2));
-
-        jPanel44.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
-        jPanel44.setLayout(jPanel44Layout);
-        jPanel44Layout.setHorizontalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-        jPanel44Layout.setVerticalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel8.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 220, 2));
-
-        jPanel45.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
-        jPanel45.setLayout(jPanel45Layout);
-        jPanel45Layout.setHorizontalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-        jPanel45Layout.setVerticalGroup(
-            jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel8.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 220, 2));
-
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 420, 340));
-
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/empresa.png"))); // NOI18N
-        jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 410, 290));
-
-        javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
-        jPanel40.setLayout(jPanel40Layout);
-        jPanel40Layout.setHorizontalGroup(
-            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel40Layout.setVerticalGroup(
-            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-
-        jPanel7.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 10));
-
-        jTabbedPane1.addTab("6", jPanel7);
-
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel34.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel34.setText("Correo Electrónico");
-        jPanel13.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 102, -1, -1));
-
-        jLabel35.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel35.setText("Password");
-        jPanel13.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, -1, -1));
-
-        txtCorreo.setBackground(new java.awt.Color(204, 204, 204));
-        txtCorreo.setBorder(null);
-        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreoActionPerformed(evt);
-            }
-        });
-        jPanel13.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 126, 226, 30));
-
-        txtPass.setBackground(new java.awt.Color(204, 204, 204));
-        txtPass.setBorder(null);
-        jPanel13.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 182, 226, 30));
-
-        btnIniciar.setBackground(new java.awt.Color(0, 110, 255));
-        btnIniciar.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
-        btnIniciar.setText("Registrar");
-        btnIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarActionPerformed(evt);
-            }
-        });
-        jPanel13.add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 341, 226, 34));
-
-        jLabel36.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel36.setText("Nombre:");
-        jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
-
-        txtNombre.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombre.setBorder(null);
-        jPanel13.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
-
-        jLabel37.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel37.setText("Rol:");
-        jPanel13.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
-
-        cbxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Asistente" }));
-        jPanel13.add(cbxRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 304, 226, 30));
-
-        jPanel15.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel13.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
-
-        jPanel16.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel13.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
-
-        jPanel17.setBackground(new java.awt.Color(0, 110, 255));
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 226, Short.MAX_VALUE)
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jPanel13.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
-
-        jPanel18.setBackground(new java.awt.Color(0, 110, 255));
-
-        jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setText("Nuevo Usuario");
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel39)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        jPanel13.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 60));
-
-        jPanel12.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 280, 380));
-
-        TableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Id", "Nombre", "Correo", "Rol"
-            }
-        ));
-        jScrollPane6.setViewportView(TableUsuarios);
-
-        jPanel12.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 540, 380));
-
-        jTabbedPane1.addTab("7", jPanel12);
-
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 95, 860, 460));
-
-        pack();
+    });
+    jPanel2.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 373, -1, 45));
+
+    jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/money.png"))); // NOI18N
+    jLabel10.setText("Total a Pagar:");
+    jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 377, -1, -1));
+
+    LabelTotal.setText("-----");
+    jPanel2.add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 381, -1, -1));
+    jPanel2.add(txtIdCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 375, -1, -1));
+    jPanel2.add(txtIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
+
+    Midate.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel2.add(Midate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 210, 30));
+
+    jLabel11.setText("Seleccionar:");
+    jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, -1, -1));
+
+    jPanel14.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+    jPanel14.setLayout(jPanel14Layout);
+    jPanel14Layout.setHorizontalGroup(
+        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel14Layout.setVerticalGroup(
+        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 2));
+
+    jPanel19.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+    jPanel19.setLayout(jPanel19Layout);
+    jPanel19Layout.setHorizontalGroup(
+        jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 100, Short.MAX_VALUE)
+    );
+    jPanel19Layout.setVerticalGroup(
+        jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 2));
+
+    jPanel20.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+    jPanel20.setLayout(jPanel20Layout);
+    jPanel20Layout.setHorizontalGroup(
+        jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 190, Short.MAX_VALUE)
+    );
+    jPanel20Layout.setVerticalGroup(
+        jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 190, 2));
+
+    jPanel21.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+    jPanel21.setLayout(jPanel21Layout);
+    jPanel21Layout.setHorizontalGroup(
+        jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 40, Short.MAX_VALUE)
+    );
+    jPanel21Layout.setVerticalGroup(
+        jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 40, 2));
+
+    jPanel22.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+    jPanel22.setLayout(jPanel22Layout);
+    jPanel22Layout.setHorizontalGroup(
+        jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 80, Short.MAX_VALUE)
+    );
+    jPanel22Layout.setVerticalGroup(
+        jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 80, 2));
+
+    jPanel23.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+    jPanel23.setLayout(jPanel23Layout);
+    jPanel23Layout.setHorizontalGroup(
+        jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 85, Short.MAX_VALUE)
+    );
+    jPanel23Layout.setVerticalGroup(
+        jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 85, 2));
+
+    jPanel24.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+    jPanel24.setLayout(jPanel24Layout);
+    jPanel24Layout.setHorizontalGroup(
+        jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 120, Short.MAX_VALUE)
+    );
+    jPanel24Layout.setVerticalGroup(
+        jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 405, 120, 2));
+
+    jPanel25.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+    jPanel25.setLayout(jPanel25Layout);
+    jPanel25Layout.setHorizontalGroup(
+        jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 160, Short.MAX_VALUE)
+    );
+    jPanel25Layout.setVerticalGroup(
+        jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel2.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 405, 160, 2));
+
+    jTabbedPane1.addTab("1", jPanel2);
+
+    jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    TableCliente.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "ID", "DNI/RUC", "NOMBRE", "TELÉFONO", "DIRECCIÓN"
+        }
+    )
+    {
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    }
+    );
+    TableCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    TableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            TableClienteMouseClicked(evt);
+        }
+    });
+    jScrollPane2.setViewportView(TableCliente);
+    if (TableCliente.getColumnModel().getColumnCount() > 0) {
+        TableCliente.getColumnModel().getColumn(0).setPreferredWidth(10);
+        TableCliente.getColumnModel().getColumn(1).setPreferredWidth(50);
+        TableCliente.getColumnModel().getColumn(2).setPreferredWidth(100);
+        TableCliente.getColumnModel().getColumn(3).setPreferredWidth(50);
+        TableCliente.getColumnModel().getColumn(4).setPreferredWidth(80);
+    }
+
+    jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 555, 370));
+
+    jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+    jLabel12.setText("Dni/Ruc:");
+    jPanel9.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+    txtDniCliente.setBackground(new java.awt.Color(204, 204, 204));
+    txtDniCliente.setBorder(null);
+    txtDniCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtDniClienteKeyTyped(evt);
+        }
+    });
+    jPanel9.add(txtDniCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 160, 30));
+
+    jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+    jLabel13.setText("Nombre:");
+    jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+    txtNombreCliente.setBackground(new java.awt.Color(204, 204, 204));
+    txtNombreCliente.setBorder(null);
+    txtNombreCliente.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtNombreClienteActionPerformed(evt);
+        }
+    });
+    txtNombreCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtNombreClienteKeyTyped(evt);
+        }
+    });
+    jPanel9.add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 160, 30));
+
+    txtTelefonoCliente.setBackground(new java.awt.Color(204, 204, 204));
+    txtTelefonoCliente.setBorder(null);
+    txtTelefonoCliente.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtTelefonoClienteActionPerformed(evt);
+        }
+    });
+    txtTelefonoCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtTelefonoClienteKeyTyped(evt);
+        }
+    });
+    jPanel9.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 160, 30));
+
+    jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+    jLabel14.setText("Télefono:");
+    jPanel9.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+    jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+    jLabel15.setText("Dirección:");
+    jPanel9.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+
+    txtDirecionCliente.setBackground(new java.awt.Color(204, 204, 204));
+    txtDirecionCliente.setBorder(null);
+    jPanel9.add(txtDirecionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 203, 160, 30));
+    jPanel9.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 30, -1));
+
+    btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
+    btnGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnGuardarClienteActionPerformed(evt);
+        }
+    });
+    jPanel9.add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 266, 70, 35));
+
+    btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
+    btnEditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEditarClienteActionPerformed(evt);
+        }
+    });
+    jPanel9.add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 266, 70, 35));
+
+    btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+    btnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEliminarClienteActionPerformed(evt);
+        }
+    });
+    jPanel9.add(btnEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 317, 70, 35));
+
+    btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
+    btnNuevoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnNuevoClienteActionPerformed(evt);
+        }
+    });
+    jPanel9.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 317, 70, 35));
+
+    jPanel26.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+    jPanel26.setLayout(jPanel26Layout);
+    jPanel26Layout.setHorizontalGroup(
+        jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 160, Short.MAX_VALUE)
+    );
+    jPanel26Layout.setVerticalGroup(
+        jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel9.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 160, 2));
+
+    jPanel27.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+    jPanel27.setLayout(jPanel27Layout);
+    jPanel27Layout.setHorizontalGroup(
+        jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 160, Short.MAX_VALUE)
+    );
+    jPanel27Layout.setVerticalGroup(
+        jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel9.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 160, 2));
+
+    jPanel28.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+    jPanel28.setLayout(jPanel28Layout);
+    jPanel28Layout.setHorizontalGroup(
+        jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 160, Short.MAX_VALUE)
+    );
+    jPanel28Layout.setVerticalGroup(
+        jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel9.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 160, 2));
+
+    jPanel29.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+    jPanel29.setLayout(jPanel29Layout);
+    jPanel29Layout.setHorizontalGroup(
+        jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 160, Short.MAX_VALUE)
+    );
+    jPanel29Layout.setVerticalGroup(
+        jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel9.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 233, 160, 2));
+
+    jPanel46.setBackground(new java.awt.Color(0, 110, 255));
+
+    jLabel41.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel41.setText("Nuevo Cliente");
+
+    javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
+    jPanel46.setLayout(jPanel46Layout);
+    jPanel46Layout.setHorizontalGroup(
+        jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+    );
+    jPanel46Layout.setVerticalGroup(
+        jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel46Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel41)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    jPanel9.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
+
+    jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 270, 370));
+
+    jTabbedPane1.addTab("2", jPanel3);
+
+    jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    TableProveedor.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "ID", "RUC", "NOMBRE", "TELÉFONO", "DIRECCIÓN"
+        }
+    )
+    {
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    }
+    );
+    TableProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            TableProveedorMouseClicked(evt);
+        }
+    });
+    jScrollPane3.setViewportView(TableProveedor);
+    if (TableProveedor.getColumnModel().getColumnCount() > 0) {
+        TableProveedor.getColumnModel().getColumn(0).setPreferredWidth(20);
+        TableProveedor.getColumnModel().getColumn(1).setPreferredWidth(40);
+        TableProveedor.getColumnModel().getColumn(1).setHeaderValue("RUC");
+        TableProveedor.getColumnModel().getColumn(2).setPreferredWidth(100);
+        TableProveedor.getColumnModel().getColumn(3).setPreferredWidth(50);
+        TableProveedor.getColumnModel().getColumn(3).setHeaderValue("TELÉFONO");
+        TableProveedor.getColumnModel().getColumn(4).setPreferredWidth(80);
+        TableProveedor.getColumnModel().getColumn(4).setHeaderValue("DIRECCIÓN");
+    }
+
+    jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 57, 558, 370));
+
+    jPanel10.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel17.setText("Ruc:");
+    jPanel10.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+    txtRucProveedor.setBackground(new java.awt.Color(204, 204, 204));
+    txtRucProveedor.setBorder(null);
+    txtRucProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtRucProveedorKeyTyped(evt);
+        }
+    });
+    jPanel10.add(txtRucProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 138, 30));
+
+    jLabel18.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel18.setText("Nombre:");
+    jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+    txtNombreproveedor.setBackground(new java.awt.Color(204, 204, 204));
+    txtNombreproveedor.setBorder(null);
+    txtNombreproveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtNombreproveedorKeyTyped(evt);
+        }
+    });
+    jPanel10.add(txtNombreproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 138, 30));
+
+    jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel19.setText("Teléfono:");
+    jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+    txtTelefonoProveedor.setBackground(new java.awt.Color(204, 204, 204));
+    txtTelefonoProveedor.setBorder(null);
+    txtTelefonoProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtTelefonoProveedorKeyTyped(evt);
+        }
+    });
+    jPanel10.add(txtTelefonoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 138, 30));
+
+    jLabel20.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel20.setText("Dirección:");
+    jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+    txtDireccionProveedor.setBackground(new java.awt.Color(204, 204, 204));
+    txtDireccionProveedor.setBorder(null);
+    jPanel10.add(txtDireccionProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 138, 30));
+
+    btnguardarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
+    btnguardarProveedor.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnguardarProveedorActionPerformed(evt);
+        }
+    });
+    jPanel10.add(btnguardarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 266, 70, 35));
+
+    btnEditarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
+    btnEditarProveedor.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEditarProveedorActionPerformed(evt);
+        }
+    });
+    jPanel10.add(btnEditarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 266, 70, 35));
+
+    btnNuevoProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
+    btnNuevoProveedor.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnNuevoProveedorActionPerformed(evt);
+        }
+    });
+    jPanel10.add(btnNuevoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 318, 70, 35));
+
+    btnEliminarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+    btnEliminarProveedor.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEliminarProveedorActionPerformed(evt);
+        }
+    });
+    jPanel10.add(btnEliminarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 318, 70, 35));
+    jPanel10.add(txtIdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 24, -1));
+
+    jPanel34.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
+    jPanel34.setLayout(jPanel34Layout);
+    jPanel34Layout.setHorizontalGroup(
+        jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 138, Short.MAX_VALUE)
+    );
+    jPanel34Layout.setVerticalGroup(
+        jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 138, 2));
+
+    jPanel35.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+    jPanel35.setLayout(jPanel35Layout);
+    jPanel35Layout.setHorizontalGroup(
+        jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 138, Short.MAX_VALUE)
+    );
+    jPanel35Layout.setVerticalGroup(
+        jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 138, 2));
+
+    jPanel36.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+    jPanel36.setLayout(jPanel36Layout);
+    jPanel36Layout.setHorizontalGroup(
+        jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 138, Short.MAX_VALUE)
+    );
+    jPanel36Layout.setVerticalGroup(
+        jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 138, 2));
+
+    jPanel37.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+    jPanel37.setLayout(jPanel37Layout);
+    jPanel37Layout.setHorizontalGroup(
+        jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 138, Short.MAX_VALUE)
+    );
+    jPanel37Layout.setVerticalGroup(
+        jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 138, 2));
+
+    jPanel38.setBackground(new java.awt.Color(0, 110, 255));
+
+    jLabel33.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel33.setText("Nuevo Proveedor");
+
+    javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
+    jPanel38.setLayout(jPanel38Layout);
+    jPanel38Layout.setHorizontalGroup(
+        jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+    );
+    jPanel38Layout.setVerticalGroup(
+        jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel38Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel33)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    jPanel10.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 50));
+
+    jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 260, 380));
+
+    jTabbedPane1.addTab("3", jPanel4);
+
+    jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    TableProducto.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "ID", "CODIGO", "DESCRIPCIÓN", "PROVEEDOR", "STOCK", "PRECIO"
+        }
+    )
+    {
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    }
+    );
+    TableProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            TableProductoMouseClicked(evt);
+        }
+    });
+    jScrollPane4.setViewportView(TableProducto);
+    if (TableProducto.getColumnModel().getColumnCount() > 0) {
+        TableProducto.getColumnModel().getColumn(0).setPreferredWidth(20);
+        TableProducto.getColumnModel().getColumn(1).setPreferredWidth(50);
+        TableProducto.getColumnModel().getColumn(2).setPreferredWidth(100);
+        TableProducto.getColumnModel().getColumn(3).setPreferredWidth(60);
+        TableProducto.getColumnModel().getColumn(4).setPreferredWidth(40);
+        TableProducto.getColumnModel().getColumn(5).setPreferredWidth(50);
+    }
+
+    jPanel5.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 590, 380));
+
+    txtIdproducto.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtIdproductoActionPerformed(evt);
+        }
+    });
+    jPanel5.add(txtIdproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 25, 20, -1));
+
+    jPanel11.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel22.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel22.setText("Código:");
+    jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+    txtCodigoPro.setBackground(new java.awt.Color(204, 204, 204));
+    txtCodigoPro.setBorder(null);
+    txtCodigoPro.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtCodigoProKeyTyped(evt);
+        }
+    });
+    jPanel11.add(txtCodigoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 130, 30));
+
+    jLabel23.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel23.setText("Descripción:");
+    jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+    txtDesPro.setBackground(new java.awt.Color(204, 204, 204));
+    txtDesPro.setBorder(null);
+    txtDesPro.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtDesProKeyTyped(evt);
+        }
+    });
+    jPanel11.add(txtDesPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 130, 30));
+
+    jLabel24.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel24.setText("Cantidad:");
+    jPanel11.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+    txtCantPro.setBackground(new java.awt.Color(204, 204, 204));
+    txtCantPro.setBorder(null);
+    txtCantPro.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtCantProKeyTyped(evt);
+        }
+    });
+    jPanel11.add(txtCantPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 130, 30));
+
+    jLabel25.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel25.setText("Precio:");
+    jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+
+    txtPrecioPro.setBackground(new java.awt.Color(204, 204, 204));
+    txtPrecioPro.setBorder(null);
+    txtPrecioPro.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtPrecioProKeyTyped(evt);
+        }
+    });
+    jPanel11.add(txtPrecioPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, 30));
+
+    jLabel26.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel26.setText("Proveedor:");
+    jPanel11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+
+    cbxProveedorPro.setBackground(new java.awt.Color(204, 204, 204));
+    cbxProveedorPro.setBorder(null);
+    cbxProveedorPro.addItemListener(new java.awt.event.ItemListener() {
+        public void itemStateChanged(java.awt.event.ItemEvent evt) {
+            cbxProveedorProItemStateChanged(evt);
+        }
+    });
+    cbxProveedorPro.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            cbxProveedorProActionPerformed(evt);
+        }
+    });
+    jPanel11.add(cbxProveedorPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 130, 30));
+
+    btnGuardarpro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
+    btnGuardarpro.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnGuardarproActionPerformed(evt);
+        }
+    });
+    jPanel11.add(btnGuardarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 35));
+
+    btnEditarpro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
+    btnEditarpro.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEditarproActionPerformed(evt);
+        }
+    });
+    jPanel11.add(btnEditarpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, 35));
+
+    btnEliminarPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+    btnEliminarPro.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEliminarProActionPerformed(evt);
+        }
+    });
+    jPanel11.add(btnEliminarPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 35));
+
+    btnNuevoPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
+    btnNuevoPro.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnNuevoProActionPerformed(evt);
+        }
+    });
+    jPanel11.add(btnNuevoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, 35));
+
+    jPanel30.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
+    jPanel30.setLayout(jPanel30Layout);
+    jPanel30Layout.setHorizontalGroup(
+        jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel30Layout.setVerticalGroup(
+        jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel11.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 130, 2));
+
+    jPanel31.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+    jPanel31.setLayout(jPanel31Layout);
+    jPanel31Layout.setHorizontalGroup(
+        jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel31Layout.setVerticalGroup(
+        jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel11.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 130, 2));
+
+    jPanel32.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+    jPanel32.setLayout(jPanel32Layout);
+    jPanel32Layout.setHorizontalGroup(
+        jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel32Layout.setVerticalGroup(
+        jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel11.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 130, 2));
+
+    jPanel33.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+    jPanel33.setLayout(jPanel33Layout);
+    jPanel33Layout.setHorizontalGroup(
+        jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel33Layout.setVerticalGroup(
+        jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel11.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, 2));
+
+    jPanel39.setBackground(new java.awt.Color(0, 110, 255));
+
+    jLabel40.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel40.setText("Nuevo Producto");
+
+    javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
+    jPanel39.setLayout(jPanel39Layout);
+    jPanel39Layout.setHorizontalGroup(
+        jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+    );
+    jPanel39Layout.setVerticalGroup(
+        jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel39Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+            .addContainerGap())
+    );
+
+    jPanel11.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 50));
+
+    jPanel5.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 250, 380));
+
+    jTabbedPane1.addTab("4", jPanel5);
+
+    jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    TableVentas.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "ID", "CLIENTE", "VENDEDOR", "TOTAL"
+        }
+    )
+    {
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    }
+    );
+    TableVentas.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            TableVentasMouseClicked(evt);
+        }
+    });
+    jScrollPane5.setViewportView(TableVentas);
+    if (TableVentas.getColumnModel().getColumnCount() > 0) {
+        TableVentas.getColumnModel().getColumn(0).setPreferredWidth(20);
+        TableVentas.getColumnModel().getColumn(1).setPreferredWidth(60);
+        TableVentas.getColumnModel().getColumn(2).setPreferredWidth(60);
+        TableVentas.getColumnModel().getColumn(3).setPreferredWidth(60);
+    }
+
+    jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 766, 290));
+
+    btnPdfVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/pdf.png"))); // NOI18N
+    btnPdfVentas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnPdfVentasActionPerformed(evt);
+        }
+    });
+    jPanel6.add(btnPdfVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 50, 40));
+    jPanel6.add(txtIdVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 46, -1));
+
+    jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel16.setText("Historial Ventas");
+    jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 280, -1));
+
+    BtnBoVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+    BtnBoVenta.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            BtnBoVentaActionPerformed(evt);
+        }
+    });
+    jPanel6.add(BtnBoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 50, 40));
+
+    jTabbedPane1.addTab("5", jPanel6);
+
+    jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel32.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel32.setText("DATOS DE LA EMPRESA");
+    jPanel7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
+
+    jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+    jPanel8.add(txtIdConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 24, -1));
+
+    jLabel30.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel30.setText("Dirección");
+    jPanel8.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+    jLabel29.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel29.setText("Teléfono");
+    jPanel8.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
+
+    txtTelefonoConfig.setBackground(new java.awt.Color(204, 204, 204));
+    txtTelefonoConfig.setBorder(null);
+    txtTelefonoConfig.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtTelefonoConfigKeyTyped(evt);
+        }
+    });
+    jPanel8.add(txtTelefonoConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 218, 30));
+
+    txtDireccionConfig.setBackground(new java.awt.Color(204, 204, 204));
+    txtDireccionConfig.setBorder(null);
+    jPanel8.add(txtDireccionConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 147, 30));
+
+    jLabel31.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel31.setText("Mensaje");
+    jPanel8.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+    txtMensaje.setBackground(new java.awt.Color(204, 204, 204));
+    txtMensaje.setBorder(null);
+    txtMensaje.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtMensajeKeyTyped(evt);
+        }
+    });
+    jPanel8.add(txtMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 400, 30));
+
+    btnActualizarConfig.setBackground(new java.awt.Color(0, 110, 255));
+    btnActualizarConfig.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+    btnActualizarConfig.setForeground(new java.awt.Color(255, 255, 255));
+    btnActualizarConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
+    btnActualizarConfig.setText("ACTUALIZAR");
+    btnActualizarConfig.setBorder(null);
+    btnActualizarConfig.setFocusable(false);
+    btnActualizarConfig.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnActualizarConfigActionPerformed(evt);
+        }
+    });
+    jPanel8.add(btnActualizarConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 180, 35));
+
+    jLabel27.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel27.setText("Ruc");
+    jPanel8.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+    txtRucConfig.setBackground(new java.awt.Color(204, 204, 204));
+    txtRucConfig.setBorder(null);
+    txtRucConfig.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtRucConfigKeyTyped(evt);
+        }
+    });
+    jPanel8.add(txtRucConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 147, 30));
+
+    jLabel28.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel28.setText("Nombre");
+    jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+
+    txtNombreConfig.setBackground(new java.awt.Color(204, 204, 204));
+    txtNombreConfig.setBorder(null);
+    txtNombreConfig.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtNombreConfigKeyTyped(evt);
+        }
+    });
+    jPanel8.add(txtNombreConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 220, 30));
+
+    jPanel41.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
+    jPanel41.setLayout(jPanel41Layout);
+    jPanel41Layout.setHorizontalGroup(
+        jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 147, Short.MAX_VALUE)
+    );
+    jPanel41Layout.setVerticalGroup(
+        jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel8.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 147, 2));
+
+    jPanel42.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
+    jPanel42.setLayout(jPanel42Layout);
+    jPanel42Layout.setHorizontalGroup(
+        jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 147, Short.MAX_VALUE)
+    );
+    jPanel42Layout.setVerticalGroup(
+        jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel8.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 147, 2));
+
+    jPanel43.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
+    jPanel43.setLayout(jPanel43Layout);
+    jPanel43Layout.setHorizontalGroup(
+        jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 400, Short.MAX_VALUE)
+    );
+    jPanel43Layout.setVerticalGroup(
+        jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel8.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 400, 2));
+
+    jPanel44.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
+    jPanel44.setLayout(jPanel44Layout);
+    jPanel44Layout.setHorizontalGroup(
+        jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 220, Short.MAX_VALUE)
+    );
+    jPanel44Layout.setVerticalGroup(
+        jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel8.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 220, 2));
+
+    jPanel45.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
+    jPanel45.setLayout(jPanel45Layout);
+    jPanel45Layout.setHorizontalGroup(
+        jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 220, Short.MAX_VALUE)
+    );
+    jPanel45Layout.setVerticalGroup(
+        jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 2, Short.MAX_VALUE)
+    );
+
+    jPanel8.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 220, 2));
+
+    jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 420, 340));
+
+    jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/empresa.png"))); // NOI18N
+    jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 410, 290));
+
+    javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
+    jPanel40.setLayout(jPanel40Layout);
+    jPanel40Layout.setHorizontalGroup(
+        jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 100, Short.MAX_VALUE)
+    );
+    jPanel40Layout.setVerticalGroup(
+        jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 10, Short.MAX_VALUE)
+    );
+
+    jPanel7.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 10));
+
+    jTabbedPane1.addTab("6", jPanel7);
+
+    jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jPanel13.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel34.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel34.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel34.setText("Correo Electrónico");
+    jPanel13.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 102, -1, -1));
+
+    jLabel35.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel35.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel35.setText("Password");
+    jPanel13.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(-56, -17, -1, -1));
+
+    txtCorreo.setBackground(new java.awt.Color(204, 204, 204));
+    txtCorreo.setBorder(null);
+    txtCorreo.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtCorreoActionPerformed(evt);
+        }
+    });
+    jPanel13.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 126, 226, 30));
+
+    txtPass.setBackground(new java.awt.Color(204, 204, 204));
+    txtPass.setBorder(null);
+    jPanel13.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 182, 226, 30));
+
+    btnIniciar.setBackground(new java.awt.Color(0, 110, 255));
+    btnIniciar.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+    btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
+    btnIniciar.setText("Registrar");
+    btnIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    btnIniciar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnIniciarActionPerformed(evt);
+        }
+    });
+    jPanel13.add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 341, 190, 34));
+
+    jLabel36.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel36.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel36.setText("Contraseña:");
+    jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 167, -1, 20));
+
+    txtNombre.setBackground(new java.awt.Color(204, 204, 204));
+    txtNombre.setBorder(null);
+    txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtNombreKeyTyped(evt);
+        }
+    });
+    jPanel13.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
+
+    jLabel37.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel37.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel37.setText("Rol:");
+    jPanel13.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+    cbxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Asistente" }));
+    jPanel13.add(cbxRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 304, 226, 30));
+
+    jPanel15.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+    jPanel15.setLayout(jPanel15Layout);
+    jPanel15Layout.setHorizontalGroup(
+        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel15Layout.setVerticalGroup(
+        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel13.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
+
+    jPanel16.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+    jPanel16.setLayout(jPanel16Layout);
+    jPanel16Layout.setHorizontalGroup(
+        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel16Layout.setVerticalGroup(
+        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel13.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
+
+    jPanel17.setBackground(new java.awt.Color(0, 110, 255));
+
+    javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+    jPanel17.setLayout(jPanel17Layout);
+    jPanel17Layout.setHorizontalGroup(
+        jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+    jPanel17Layout.setVerticalGroup(
+        jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 0, Short.MAX_VALUE)
+    );
+
+    jPanel13.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
+
+    jPanel18.setBackground(new java.awt.Color(0, 110, 255));
+
+    jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel39.setText("Nuevo Usuario");
+
+    javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+    jPanel18.setLayout(jPanel18Layout);
+    jPanel18Layout.setHorizontalGroup(
+        jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    jPanel18Layout.setVerticalGroup(
+        jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel18Layout.createSequentialGroup()
+            .addGap(22, 22, 22)
+            .addComponent(jLabel39)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    jPanel13.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 60));
+
+    BtnEliUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+    BtnEliUsuario.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            BtnEliUsuarioActionPerformed(evt);
+        }
+    });
+    jPanel13.add(BtnEliUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 50, 30));
+
+    txtIdUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtIdUsuariosActionPerformed(evt);
+        }
+    });
+    jPanel13.add(txtIdUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 20, -1));
+
+    jLabel42.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel42.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel42.setText("Nombre:");
+    jPanel13.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
+
+    jPanel12.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 290, 380));
+
+    TableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "Id", "Nombre", "Correo", "Rol"
+        }
+    )
+    {
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    }
+    );
+    TableUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            TableUsuariosMouseClicked(evt);
+        }
+    });
+    jScrollPane6.setViewportView(TableUsuarios);
+
+    jPanel12.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 540, 380));
+
+    jTabbedPane1.addTab("7", jPanel12);
+
+    getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 95, 860, 460));
+
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
@@ -1772,7 +1905,9 @@ public final class Sistema extends javax.swing.JFrame {
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(6);
+        txtIdUsuarios.setVisible(false);
         LimpiarTable();
+        LimparRegistro();
         ListarUsuarios();
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
@@ -1797,6 +1932,7 @@ public final class Sistema extends javax.swing.JFrame {
             lg.setRol(rol);
             login.Registrar(lg);
             LimpiarTable();
+            LimparRegistro();
             ListarUsuarios();
             JOptionPane.showMessageDialog(null, "Usuario Registrado");
         }
@@ -1826,7 +1962,7 @@ public final class Sistema extends javax.swing.JFrame {
     private void btnPdfVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfVentasActionPerformed
 
         if (txtIdVenta.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Selecciona una fila");
+            JOptionPane.showMessageDialog(null, "Selecciona el id de la fila");
         } else {
             v = Vdao.BuscarVenta(Integer.parseInt(txtIdVenta.getText()));
             Vdao.pdfV(v.getId(), v.getCliente(), v.getTotal(), v.getVendedor());
@@ -1925,6 +2061,19 @@ public final class Sistema extends javax.swing.JFrame {
 
     private void txtPrecioProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioProKeyTyped
         // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtPrecioPro.getText().trim().length() == 10) {
+            evt.consume();
+        }
         event.numberDecimalKeyPress(evt, txtPrecioPro);
     }//GEN-LAST:event_txtPrecioProKeyTyped
 
@@ -2056,6 +2205,20 @@ public final class Sistema extends javax.swing.JFrame {
 
     private void txtRucVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRucVentaKeyTyped
         // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE;
+
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtRucVenta.getText().trim().length() == 10) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtRucVentaKeyTyped
 
     private void txtRucVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRucVentaKeyPressed
@@ -2078,14 +2241,35 @@ public final class Sistema extends javax.swing.JFrame {
     private void btnEliminarventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarventaActionPerformed
         // TODO add your handling code here:
         modelo = (DefaultTableModel) TableVenta.getModel();
-        modelo.removeRow(TableVenta.getSelectedRow());
-        TotalPagar();
-        txtCodigoVenta.requestFocus();
+int filaSeleccionada = TableVenta.getSelectedRow();
+
+if (filaSeleccionada == -1) {
+    JOptionPane.showMessageDialog(null, "Por favor, selecciona una fila para eliminar.");
+} else {
+    modelo.removeRow(filaSeleccionada);
+    TotalPagar();
+    txtCodigoVenta.requestFocus();
+}
+        
+        
     }//GEN-LAST:event_btnEliminarventaActionPerformed
 
     private void txtCantidadVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadVentaKeyTyped
         // TODO add your handling code here:
-        event.numberKeyPress(evt);
+        int key = evt.getKeyChar();
+
+        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE;
+
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtCantidadVenta.getText().trim().length() == 10) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtCantidadVentaKeyTyped
 
     private void txtCantidadVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadVentaKeyPressed
@@ -2141,7 +2325,20 @@ public final class Sistema extends javax.swing.JFrame {
 
     private void txtCodigoVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoVentaKeyTyped
         // TODO add your handling code here:
-        event.numberKeyPress(evt);
+        int key = evt.getKeyChar();
+
+        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE;
+
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtCodigoVenta.getText().trim().length() == 10) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtCodigoVentaKeyTyped
 
     private void txtCodigoVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoVentaKeyPressed
@@ -2169,6 +2366,19 @@ public final class Sistema extends javax.swing.JFrame {
 
     private void txtDniClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniClienteKeyTyped
         // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtDniCliente.getText().trim().length() == 10) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtDniClienteKeyTyped
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
@@ -2236,6 +2446,294 @@ public final class Sistema extends javax.swing.JFrame {
         btnGuardarCliente.setEnabled(true);
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
 
+    private void txtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreClienteActionPerformed
+
+    private void txtTelefonoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoClienteActionPerformed
+
+    private void txtCodigoVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoVentaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtCodigoVentaActionPerformed
+
+    private void txtCantidadVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadVentaKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadVentaKeyReleased
+
+    private void txtTelefonoClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoClienteKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtTelefonoCliente.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefonoClienteKeyTyped
+
+    private void txtRucProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRucProveedorKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtRucProveedor.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtRucProveedorKeyTyped
+
+    private void txtTelefonoProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoProveedorKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtTelefonoProveedor.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefonoProveedorKeyTyped
+
+    private void txtCodigoProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoProKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtCodigoPro.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCodigoProKeyTyped
+
+    private void txtCantProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantProKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtCantPro.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantProKeyTyped
+
+    private void txtRucConfigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRucConfigKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtRucConfig.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtRucConfigKeyTyped
+
+    private void txtTelefonoConfigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoConfigKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57 || key == KeyEvent.VK_BACK_SPACE;
+
+        if (!numeros)
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten numeros");
+        }
+
+        if (txtTelefonoConfig.getText().trim().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefonoConfigKeyTyped
+
+    private void txtNombreClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreClienteKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio || key == KeyEvent.VK_BACK_SPACE))
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten letras");
+        }
+    }//GEN-LAST:event_txtNombreClienteKeyTyped
+
+    private void txtNombreproveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreproveedorKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio || key == KeyEvent.VK_BACK_SPACE))
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten letras");
+        }
+    }//GEN-LAST:event_txtNombreproveedorKeyTyped
+
+    private void txtDesProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDesProKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio || key == KeyEvent.VK_BACK_SPACE))
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten letras");
+        }
+    }//GEN-LAST:event_txtDesProKeyTyped
+
+    private void txtNombreConfigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreConfigKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio || key == KeyEvent.VK_BACK_SPACE))
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten letras");
+        }
+    }//GEN-LAST:event_txtNombreConfigKeyTyped
+
+    private void txtMensajeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMensajeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio || key == KeyEvent.VK_BACK_SPACE))
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten letras");
+        }
+    }//GEN-LAST:event_txtMensajeKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+
+        if (!(minusculas || mayusculas || espacio || key == KeyEvent.VK_BACK_SPACE))
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Solo se permiten letras");
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void BtnBoVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBoVentaActionPerformed
+        // TODO add your handling code here:
+        if (txtIdVenta.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Selecciona el id de la fila a eliminar");
+        } else if (!"".equals(txtIdVenta.getText())) {
+            int pregunta = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar");
+            if (pregunta == 0) {
+                int id = Integer.parseInt(txtIdVenta.getText());
+                Vdao.EliminarVenta(id);
+                LimpiarTable();
+                ListarVentas();
+                LimpiarTableVenta();
+               
+            }
+        } 
+    }//GEN-LAST:event_BtnBoVentaActionPerformed
+
+    private void txtIdproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdproductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdproductoActionPerformed
+
+    private void txtIdUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdUsuariosActionPerformed
+
+    private void BtnEliUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliUsuarioActionPerformed
+        // TODO add your handling code here:
+        if (txtIdUsuarios.getText().equals("")) {
+    JOptionPane.showMessageDialog(null, "Selecciona el ID de la fila a eliminar");
+} else if (!"".equals(txtIdUsuarios.getText())) {
+    int id = Integer.parseInt(txtIdUsuarios.getText());
+    if (id == 1) {
+        JOptionPane.showMessageDialog(null, "No se puede eliminar el registro con ID 1");
+    } else {
+        int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar?");
+        if (pregunta == 0) {
+            login.EliminarUsuarios(id);
+            LimpiarTable();
+            ListarUsuarios();
+        }
+    }
+}
+
+    }//GEN-LAST:event_BtnEliUsuarioActionPerformed
+
+    
+    private void TableUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableUsuariosMouseClicked
+        // TODO add your handling code here:
+        
+        BtnEliUsuario.setEnabled(true);
+        btnIniciar.setEnabled(true);
+        int fila = TableUsuarios.rowAtPoint(evt.getPoint());
+        txtIdUsuarios.setText(TableUsuarios.getValueAt(fila, 0).toString());
+//        txtNombre.setText(TableUsuarios.getValueAt(fila, 1).toString());
+//        //txtPass.setText(TableUsuarios.getValueAt(fila, 2).toString());
+//        txtCorreo.setText(TableUsuarios.getValueAt(fila, 2).toString());
+        
+        //cbxRol.setSelectedItem(TableUsuarios.getValueAt(fila, 4).toString());
+        //TableUsuarios.setEnabled(false);
+        
+    }//GEN-LAST:event_TableUsuariosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -2272,6 +2770,8 @@ public final class Sistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnBoVenta;
+    private javax.swing.JButton BtnEliUsuario;
     private javax.swing.JLabel LabelTotal;
     private javax.swing.JLabel LabelVendedor;
     private com.toedter.calendar.JDateChooser Midate;
@@ -2343,6 +2843,7 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2418,6 +2919,7 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdConfig;
     private javax.swing.JTextField txtIdPro;
     private javax.swing.JTextField txtIdProveedor;
+    private javax.swing.JTextField txtIdUsuarios;
     private javax.swing.JTextField txtIdVenta;
     private javax.swing.JTextField txtIdproducto;
     private javax.swing.JTextField txtMensaje;
@@ -2480,7 +2982,12 @@ public final class Sistema extends javax.swing.JFrame {
         txtPrecioVenta.setText("");
         txtIdVenta.setText("");
     }
-
+    private void LimparRegistro() {
+        txtCorreo.setText("");
+        txtNombre.setText("");
+        txtPass.setText("");
+        
+    }
     private void RegistrarVenta() {
         int cliente = Integer.parseInt(txtIdCV.getText());
         String vendedor = LabelVendedor.getText();
