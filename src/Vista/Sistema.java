@@ -80,7 +80,7 @@ public final class Sistema extends javax.swing.JFrame {
         }
         JTableHeader header = TableVenta.getTableHeader();
         header.setOpaque(false);
-        header.setBackground(new Color(0, 110, 255));
+        header.setBackground(new Color(204, 0, 51));
         header.setForeground(Color.white);
     }
 
@@ -99,7 +99,7 @@ public final class Sistema extends javax.swing.JFrame {
         TableCliente.setModel(modelo);
         JTableHeader header = TableCliente.getTableHeader();
         header.setOpaque(false);
-        header.setBackground(new Color(0, 110, 255));
+        header.setBackground(new Color(204, 0, 51));
         header.setForeground(Color.white);
     }
 
@@ -118,7 +118,7 @@ public final class Sistema extends javax.swing.JFrame {
         TableProveedor.setModel(modelo);
         JTableHeader header = TableProveedor.getTableHeader();
         header.setOpaque(false);
-        header.setBackground(new Color(0, 110, 255));
+        header.setBackground(new Color(204, 0, 51));
         header.setForeground(Color.white);
 
     }
@@ -137,7 +137,7 @@ public final class Sistema extends javax.swing.JFrame {
         TableUsuarios.setModel(modelo);
         JTableHeader header = TableUsuarios.getTableHeader();
         header.setOpaque(false);
-        header.setBackground(new Color(0, 110, 255));
+        header.setBackground(new Color(204, 0, 51));
         header.setForeground(Color.white);
     }
 
@@ -157,7 +157,7 @@ public final class Sistema extends javax.swing.JFrame {
         TableProducto.setModel(modelo);
         JTableHeader header = TableProducto.getTableHeader();
         header.setOpaque(false);
-        header.setBackground(new Color(0, 110, 255));
+        header.setBackground(new Color(204, 0, 51));
         header.setForeground(Color.white);
     }
 
@@ -185,7 +185,7 @@ public final class Sistema extends javax.swing.JFrame {
         TableVentas.setModel(modelo);
         JTableHeader header = TableVentas.getTableHeader();
         header.setOpaque(false);
-        header.setBackground(new Color(0, 110, 255));
+        header.setBackground(new Color(204, 0, 51));
         header.setForeground(Color.white);
     }
     public void LimpiarTable() {
@@ -378,7 +378,7 @@ public final class Sistema extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 192, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -386,6 +386,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 6, 102, 109));
 
         btnNuevaVenta.setBackground(new java.awt.Color(0, 0, 0));
+        btnNuevaVenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnNuevaVenta.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevaVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Nventa.png"))); // NOI18N
         btnNuevaVenta.setText("Nueva Venta");
@@ -399,6 +400,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel1.add(btnNuevaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 200, 45));
 
         btnClientes.setBackground(new java.awt.Color(0, 0, 0));
+        btnClientes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Clientes.png"))); // NOI18N
         btnClientes.setText("Clientes");
@@ -412,6 +414,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel1.add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 200, 45));
 
         btnProveedor.setBackground(new java.awt.Color(0, 0, 0));
+        btnProveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnProveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/proveedor.png"))); // NOI18N
         btnProveedor.setText("Proveedor");
@@ -425,6 +428,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel1.add(btnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 200, 45));
 
         btnProductos.setBackground(new java.awt.Color(0, 0, 0));
+        btnProductos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/producto.png"))); // NOI18N
         btnProductos.setText("Productos");
@@ -443,6 +447,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel1.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 200, 45));
 
         btnVentas.setBackground(new java.awt.Color(0, 0, 0));
+        btnVentas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/compras.png"))); // NOI18N
         btnVentas.setText("Ventas");
@@ -456,6 +461,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel1.add(btnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 200, 45));
 
         btnConfig.setBackground(new java.awt.Color(0, 0, 0));
+        btnConfig.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnConfig.setForeground(new java.awt.Color(255, 255, 255));
         btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/config.png"))); // NOI18N
         btnConfig.setText("Config");
@@ -468,14 +474,18 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel1.add(btnConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 200, 45));
 
+        LabelVendedor.setBackground(new java.awt.Color(204, 0, 51));
+        LabelVendedor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        LabelVendedor.setForeground(new java.awt.Color(204, 0, 51));
         LabelVendedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelVendedor.setText("Administrador");
-        jPanel1.add(LabelVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 194, -1));
+        jPanel1.add(LabelVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 194, -1));
 
         tipo.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 175, -1, -1));
 
         btnUsuarios.setBackground(new java.awt.Color(0, 0, 0));
+        btnUsuarios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/editar_user.png"))); // NOI18N
         btnUsuarios.setText("Usuarios");
@@ -490,12 +500,13 @@ public final class Sistema extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 560));
 
-        jLabel38.setFont(new java.awt.Font("Yu Gothic Light", 3, 36)); // NOI18N
+        jLabel38.setFont(new java.awt.Font("Segoe UI Black", 3, 36)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 197, 0));
         jLabel38.setText("Sistema de Venta Planet Shoes");
-        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 530, 60));
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 600, 60));
 
         jLabel2.setBackground(new java.awt.Color(255, 204, 51));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/amarillo (2).jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/fpng.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, -10, 870, 170));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
@@ -520,11 +531,10 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel7.setForeground(new java.awt.Color(204, 0, 51));
         jLabel7.setText("Stock Disponible");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
-        txtCodigoVenta.setBackground(new java.awt.Color(255, 192, 0));
         txtCodigoVenta.setBorder(null);
         txtCodigoVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -552,7 +562,6 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel2.add(txtDescripcionVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 191, 30));
 
-        txtCantidadVenta.setBackground(new java.awt.Color(255, 192, 0));
         txtCantidadVenta.setBorder(null);
         txtCantidadVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -592,13 +601,6 @@ public final class Sistema extends javax.swing.JFrame {
         }
     );
     jScrollPane1.setViewportView(TableVenta);
-    if (TableVenta.getColumnModel().getColumnCount() > 0) {
-        TableVenta.getColumnModel().getColumn(0).setPreferredWidth(60);
-        TableVenta.getColumnModel().getColumn(1).setPreferredWidth(100);
-        TableVenta.getColumnModel().getColumn(2).setPreferredWidth(40);
-        TableVenta.getColumnModel().getColumn(3).setPreferredWidth(50);
-        TableVenta.getColumnModel().getColumn(4).setPreferredWidth(60);
-    }
 
     jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 843, 191));
 
@@ -618,7 +620,6 @@ public final class Sistema extends javax.swing.JFrame {
     jLabel9.setText("Nombre:");
     jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 352, -1, -1));
 
-    txtRucVenta.setBackground(new java.awt.Color(255, 192, 0));
     txtRucVenta.setBorder(null);
     txtRucVenta.addKeyListener(new java.awt.event.KeyAdapter() {
         public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -643,19 +644,23 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel2.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 373, -1, 45));
 
+    jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
     jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/money.png"))); // NOI18N
     jLabel10.setText("Total a Pagar:");
     jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 377, -1, -1));
 
+    LabelTotal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+    LabelTotal.setForeground(new java.awt.Color(255, 0, 51));
     LabelTotal.setText("-----");
-    jPanel2.add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 381, -1, -1));
+    jPanel2.add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 377, 80, 20));
     jPanel2.add(txtIdCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 375, -1, -1));
     jPanel2.add(txtIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
 
     Midate.setBackground(new java.awt.Color(204, 204, 204));
     jPanel2.add(Midate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 210, 30));
 
-    jLabel11.setText("Seleccionar:");
+    jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+    jLabel11.setText("Fecha actual");
     jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, -1, -1));
 
     jPanel14.setBackground(new java.awt.Color(0, 110, 255));
@@ -673,7 +678,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 2));
 
-    jPanel19.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel19.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
     jPanel19.setLayout(jPanel19Layout);
@@ -688,7 +693,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel2.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 2));
 
-    jPanel20.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel20.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
     jPanel20.setLayout(jPanel20Layout);
@@ -703,7 +708,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel2.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 190, 2));
 
-    jPanel21.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel21.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
     jPanel21.setLayout(jPanel21Layout);
@@ -718,7 +723,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel2.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 40, 2));
 
-    jPanel22.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel22.setBackground(new java.awt.Color(204, 0, 0));
 
     javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
     jPanel22.setLayout(jPanel22Layout);
@@ -733,7 +738,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel2.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 80, 2));
 
-    jPanel23.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel23.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
     jPanel23.setLayout(jPanel23Layout);
@@ -748,7 +753,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel2.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 85, 2));
 
-    jPanel24.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel24.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
     jPanel24.setLayout(jPanel24Layout);
@@ -763,7 +768,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel2.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 405, 120, 2));
 
-    jPanel25.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel25.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
     jPanel25.setLayout(jPanel25Layout);
@@ -804,21 +809,14 @@ public final class Sistema extends javax.swing.JFrame {
         }
     });
     jScrollPane2.setViewportView(TableCliente);
-    if (TableCliente.getColumnModel().getColumnCount() > 0) {
-        TableCliente.getColumnModel().getColumn(0).setPreferredWidth(10);
-        TableCliente.getColumnModel().getColumn(1).setPreferredWidth(50);
-        TableCliente.getColumnModel().getColumn(2).setPreferredWidth(100);
-        TableCliente.getColumnModel().getColumn(3).setPreferredWidth(50);
-        TableCliente.getColumnModel().getColumn(4).setPreferredWidth(80);
-    }
 
     jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 555, 370));
 
     jPanel9.setBackground(new java.awt.Color(204, 204, 204));
     jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-    jLabel12.setText("Dni/Ruc:");
+    jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel12.setText("Código:");
     jPanel9.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
     txtDniCliente.setBackground(new java.awt.Color(204, 204, 204));
@@ -830,7 +828,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel9.add(txtDniCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 160, 30));
 
-    jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+    jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel13.setText("Nombre:");
     jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
@@ -862,11 +860,11 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel9.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 160, 30));
 
-    jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+    jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel14.setText("Télefono:");
     jPanel9.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
-    jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+    jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel15.setText("Dirección:");
     jPanel9.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
@@ -911,7 +909,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel9.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 317, 70, 35));
 
-    jPanel26.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel26.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
     jPanel26.setLayout(jPanel26Layout);
@@ -926,7 +924,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel9.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 160, 2));
 
-    jPanel27.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel27.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
     jPanel27.setLayout(jPanel27Layout);
@@ -941,7 +939,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel9.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 160, 2));
 
-    jPanel28.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel28.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
     jPanel28.setLayout(jPanel28Layout);
@@ -956,7 +954,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel9.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 160, 2));
 
-    jPanel29.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel29.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
     jPanel29.setLayout(jPanel29Layout);
@@ -971,9 +969,9 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel9.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 233, 160, 2));
 
-    jPanel46.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel46.setBackground(new java.awt.Color(204, 0, 51));
 
-    jLabel41.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel41.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     jLabel41.setForeground(new java.awt.Color(255, 255, 255));
     jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     jLabel41.setText("Nuevo Cliente");
@@ -988,8 +986,8 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel46Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jLabel41)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+            .addContainerGap())
     );
 
     jPanel9.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
@@ -1037,8 +1035,8 @@ public final class Sistema extends javax.swing.JFrame {
     jPanel10.setBackground(new java.awt.Color(204, 204, 204));
     jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel17.setText("Ruc:");
+    jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel17.setText("Código:");
     jPanel10.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
     txtRucProveedor.setBackground(new java.awt.Color(204, 204, 204));
@@ -1050,7 +1048,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel10.add(txtRucProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 138, 30));
 
-    jLabel18.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel18.setText("Nombre:");
     jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
@@ -1063,7 +1061,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel10.add(txtNombreproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 138, 30));
 
-    jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel19.setText("Teléfono:");
     jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
@@ -1076,7 +1074,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel10.add(txtTelefonoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 138, 30));
 
-    jLabel20.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+    jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel20.setText("Dirección:");
     jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
@@ -1117,7 +1115,7 @@ public final class Sistema extends javax.swing.JFrame {
     jPanel10.add(btnEliminarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 318, 70, 35));
     jPanel10.add(txtIdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 24, -1));
 
-    jPanel34.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel34.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
     jPanel34.setLayout(jPanel34Layout);
@@ -1132,7 +1130,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel10.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 138, 2));
 
-    jPanel35.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel35.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
     jPanel35.setLayout(jPanel35Layout);
@@ -1147,7 +1145,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel10.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 138, 2));
 
-    jPanel36.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel36.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
     jPanel36.setLayout(jPanel36Layout);
@@ -1162,7 +1160,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel10.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 138, 2));
 
-    jPanel37.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel37.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
     jPanel37.setLayout(jPanel37Layout);
@@ -1177,9 +1175,9 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel10.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 138, 2));
 
-    jPanel38.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel38.setBackground(new java.awt.Color(204, 0, 51));
 
-    jLabel33.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel33.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     jLabel33.setForeground(new java.awt.Color(255, 255, 255));
     jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     jLabel33.setText("Nuevo Proveedor");
@@ -1194,8 +1192,8 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel38Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jLabel33)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+            .addContainerGap())
     );
 
     jPanel10.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 50));
@@ -1247,7 +1245,7 @@ public final class Sistema extends javax.swing.JFrame {
     jPanel11.setBackground(new java.awt.Color(204, 204, 204));
     jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jLabel22.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
     jLabel22.setText("Código:");
     jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
@@ -1260,7 +1258,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel11.add(txtCodigoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 130, 30));
 
-    jLabel23.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
     jLabel23.setText("Descripción:");
     jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
@@ -1273,7 +1271,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel11.add(txtDesPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 130, 30));
 
-    jLabel24.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
     jLabel24.setText("Cantidad:");
     jPanel11.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
@@ -1286,7 +1284,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel11.add(txtCantPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 130, 30));
 
-    jLabel25.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
     jLabel25.setText("Precio:");
     jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
@@ -1299,7 +1297,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel11.add(txtPrecioPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, 30));
 
-    jLabel26.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+    jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
     jLabel26.setText("Proveedor:");
     jPanel11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
@@ -1349,7 +1347,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel11.add(btnNuevoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, 35));
 
-    jPanel30.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel30.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
     jPanel30.setLayout(jPanel30Layout);
@@ -1364,7 +1362,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel11.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 130, 2));
 
-    jPanel31.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel31.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
     jPanel31.setLayout(jPanel31Layout);
@@ -1379,7 +1377,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel11.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 130, 2));
 
-    jPanel32.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel32.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
     jPanel32.setLayout(jPanel32Layout);
@@ -1394,7 +1392,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel11.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 130, 2));
 
-    jPanel33.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel33.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
     jPanel33.setLayout(jPanel33Layout);
@@ -1409,9 +1407,9 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel11.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, 2));
 
-    jPanel39.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel39.setBackground(new java.awt.Color(204, 0, 51));
 
-    jLabel40.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel40.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     jLabel40.setForeground(new java.awt.Color(255, 255, 255));
     jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     jLabel40.setText("Nuevo Producto");
@@ -1477,7 +1475,7 @@ public final class Sistema extends javax.swing.JFrame {
     jPanel6.add(btnPdfVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 50, 40));
     jPanel6.add(txtIdVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 46, -1));
 
-    jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+    jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     jLabel16.setText("Historial Ventas");
     jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 280, -1));
@@ -1503,12 +1501,12 @@ public final class Sistema extends javax.swing.JFrame {
     jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
     jPanel8.add(txtIdConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 24, -1));
 
-    jLabel30.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel30.setText("Dirección");
+    jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel30.setText("Dirección:");
     jPanel8.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-    jLabel29.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel29.setText("Teléfono");
+    jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel29.setText("Teléfono:");
     jPanel8.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
 
     txtTelefonoConfig.setBackground(new java.awt.Color(204, 204, 204));
@@ -1524,8 +1522,8 @@ public final class Sistema extends javax.swing.JFrame {
     txtDireccionConfig.setBorder(null);
     jPanel8.add(txtDireccionConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 147, 30));
 
-    jLabel31.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel31.setText("Mensaje");
+    jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel31.setText("Mensaje:");
     jPanel8.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
     txtMensaje.setBackground(new java.awt.Color(204, 204, 204));
@@ -1537,8 +1535,8 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel8.add(txtMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 400, 30));
 
-    btnActualizarConfig.setBackground(new java.awt.Color(0, 110, 255));
-    btnActualizarConfig.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+    btnActualizarConfig.setBackground(new java.awt.Color(204, 0, 51));
+    btnActualizarConfig.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
     btnActualizarConfig.setForeground(new java.awt.Color(255, 255, 255));
     btnActualizarConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
     btnActualizarConfig.setText("ACTUALIZAR");
@@ -1551,8 +1549,8 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel8.add(btnActualizarConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 180, 35));
 
-    jLabel27.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel27.setText("Ruc");
+    jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel27.setText("Código:");
     jPanel8.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
     txtRucConfig.setBackground(new java.awt.Color(204, 204, 204));
@@ -1564,8 +1562,8 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel8.add(txtRucConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 147, 30));
 
-    jLabel28.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel28.setText("Nombre");
+    jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel28.setText("Nombre:");
     jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
 
     txtNombreConfig.setBackground(new java.awt.Color(204, 204, 204));
@@ -1577,7 +1575,7 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel8.add(txtNombreConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 220, 30));
 
-    jPanel41.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel41.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
     jPanel41.setLayout(jPanel41Layout);
@@ -1592,7 +1590,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel8.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 147, 2));
 
-    jPanel42.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel42.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
     jPanel42.setLayout(jPanel42Layout);
@@ -1607,7 +1605,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel8.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 147, 2));
 
-    jPanel43.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel43.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
     jPanel43.setLayout(jPanel43Layout);
@@ -1622,7 +1620,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel8.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 400, 2));
 
-    jPanel44.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel44.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
     jPanel44.setLayout(jPanel44Layout);
@@ -1637,7 +1635,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel8.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 220, 2));
 
-    jPanel45.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel45.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
     jPanel45.setLayout(jPanel45Layout);
@@ -1655,7 +1653,7 @@ public final class Sistema extends javax.swing.JFrame {
     jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 420, 340));
 
     jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/empresa.png"))); // NOI18N
-    jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 410, 290));
+    jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 410, 340));
 
     javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
     jPanel40.setLayout(jPanel40Layout);
@@ -1677,10 +1675,10 @@ public final class Sistema extends javax.swing.JFrame {
     jPanel13.setBackground(new java.awt.Color(204, 204, 204));
     jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jLabel34.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel34.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel34.setForeground(new java.awt.Color(204, 0, 51));
     jLabel34.setText("Correo Electrónico");
-    jPanel13.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 102, -1, -1));
+    jPanel13.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
     jLabel35.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
     jLabel35.setForeground(new java.awt.Color(0, 0, 255));
@@ -1694,13 +1692,13 @@ public final class Sistema extends javax.swing.JFrame {
             txtCorreoActionPerformed(evt);
         }
     });
-    jPanel13.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 126, 226, 30));
+    jPanel13.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 226, 30));
 
     txtPass.setBackground(new java.awt.Color(204, 204, 204));
     txtPass.setBorder(null);
     jPanel13.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 182, 226, 30));
 
-    btnIniciar.setBackground(new java.awt.Color(0, 110, 255));
+    btnIniciar.setBackground(new java.awt.Color(204, 0, 51));
     btnIniciar.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
     btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
     btnIniciar.setText("Registrar");
@@ -1712,10 +1710,10 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel13.add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 341, 190, 34));
 
-    jLabel36.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel36.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel36.setForeground(new java.awt.Color(204, 0, 51));
     jLabel36.setText("Contraseña:");
-    jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 167, -1, 20));
+    jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 157, -1, 30));
 
     txtNombre.setBackground(new java.awt.Color(204, 204, 204));
     txtNombre.setBorder(null);
@@ -1726,15 +1724,15 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel13.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 243, 226, 30));
 
-    jLabel37.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel37.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel37.setForeground(new java.awt.Color(204, 0, 51));
     jLabel37.setText("Rol:");
     jPanel13.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
     cbxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Asistente" }));
     jPanel13.add(cbxRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 304, 226, 30));
 
-    jPanel15.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel15.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
     jPanel15.setLayout(jPanel15Layout);
@@ -1747,9 +1745,9 @@ public final class Sistema extends javax.swing.JFrame {
         .addGap(0, 0, Short.MAX_VALUE)
     );
 
-    jPanel13.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, 226, 2));
+    jPanel13.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 226, 2));
 
-    jPanel16.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel16.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
     jPanel16.setLayout(jPanel16Layout);
@@ -1764,7 +1762,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel13.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 212, 226, 2));
 
-    jPanel17.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel17.setBackground(new java.awt.Color(204, 0, 51));
 
     javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
     jPanel17.setLayout(jPanel17Layout);
@@ -1779,7 +1777,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     jPanel13.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
 
-    jPanel18.setBackground(new java.awt.Color(0, 110, 255));
+    jPanel18.setBackground(new java.awt.Color(204, 0, 51));
 
     jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
     jLabel39.setForeground(new java.awt.Color(255, 255, 255));
@@ -1817,8 +1815,8 @@ public final class Sistema extends javax.swing.JFrame {
     });
     jPanel13.add(txtIdUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 20, -1));
 
-    jLabel42.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-    jLabel42.setForeground(new java.awt.Color(0, 0, 255));
+    jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    jLabel42.setForeground(new java.awt.Color(204, 0, 51));
     jLabel42.setText("Nombre:");
     jPanel13.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 219, -1, -1));
 
@@ -1858,6 +1856,7 @@ public final class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         LimpiarTable();
         ListarCliente();
+        btnGuardarCliente.setVisible(true);
         btnEditarCliente.setEnabled(false);
         btnEliminarCliente.setEnabled(false);
         LimpiarCliente();
@@ -2207,7 +2206,7 @@ public final class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         int key = evt.getKeyChar();
 
-        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE;
+        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_SPACE;
 
 
         if (!numeros)
@@ -2258,7 +2257,7 @@ if (filaSeleccionada == -1) {
         // TODO add your handling code here:
         int key = evt.getKeyChar();
 
-        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE;
+        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_SPACE;
 
 
         if (!numeros)
@@ -2327,7 +2326,7 @@ if (filaSeleccionada == -1) {
         // TODO add your handling code here:
         int key = evt.getKeyChar();
 
-        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE;
+        boolean numeros = (key >= 48 && key <= 57) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_SPACE;
 
 
         if (!numeros)
