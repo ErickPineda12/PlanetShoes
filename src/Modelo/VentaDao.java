@@ -277,16 +277,15 @@ documento.add(tablaCliente);
         documento.add(firma);
         
         // Mensaje de la empresa
-        // Mensaje de la empresa
 Paragraph mensajeEmpresa = new Paragraph();
 mensajeEmpresa.setAlignment(Element.ALIGN_CENTER);
-String mensaje = ""; // Inicializamos mensaje como una cadena vacía
+String mensaje = "";
 String consultaEmpres = "SELECT mensaje FROM config"; // Solo necesitamos el mensaje de la consulta
 try {
     ps = con.prepareStatement(consultaEmpresa);
     rs = ps.executeQuery();
     if (rs.next()) {
-        mensaje = rs.getString("mensaje"); // Asignamos el mensaje obtenido de la base de datos a la variable mensaje
+        mensaje = rs.getString("mensaje");
     }
 } catch (SQLException e) {
     System.out.println(e.toString());
